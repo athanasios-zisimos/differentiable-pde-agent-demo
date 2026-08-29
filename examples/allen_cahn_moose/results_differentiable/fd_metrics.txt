@@ -1,0 +1,12 @@
+control = reaction_rate
+baseline = 20
+central finite-difference h = 0.002
+perturbed controls = 19.998, 20.002
+probe (0.25, 0.25): tangent=1.1865817876539193e-02, finite_difference=1.1865822007489646e-02, relative_error=3.48138582e-07
+probe (0.5, 0.5): tangent=-8.4036034274613137e-03, finite_difference=-8.4036049075413011e-03, relative_error=1.76124414e-07
+probe (0.75, 0.25): tangent=-1.1923766395392962e-02, finite_difference=-1.1923769924631483e-02, relative_error=2.95983447e-07
+tangent L2 norm = 1.0871345238175883e-02
+finite-difference L2 norm = 1.0871350979933461e-02
+error L2 norm = 6.3780339601051959e-09
+global relative L2 error = 5.86682738e-07
+maximum probe relative error = 3.48138582e-07

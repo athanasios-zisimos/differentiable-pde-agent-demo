@@ -1,0 +1,155 @@
+{
+  "verdict": "PASS",
+  "mathematical_contract": {
+    "state": "phi",
+    "control": "reaction_rate",
+    "control_baseline": 20.0,
+    "control_bounds": null,
+    "held_fixed": {
+      "mobility": 1.0,
+      "kappa": 0.05
+    },
+    "domain": "[0,1] x [0,1]",
+    "boundary": "homogeneous natural Neumann",
+    "time_scheme": "fully implicit Euler"
+  },
+  "configuration": {
+    "nx": 96,
+    "dt": 0.0001,
+    "end_time": 0.1,
+    "reaction_rate": 20.0,
+    "mobility": 1.0,
+    "kappa": 0.05,
+    "fd_h": 0.002,
+    "save_every": 20
+  },
+  "source": "/home/thanz/moose_projects/case_16_allen_cahn/16_allen_cahn_moose_corrected.i",
+  "source_sha256": "972a10b54f21d0fb3a91136409c4effdbb963794c88c98233616e5ed1136e001",
+  "finite_difference": {
+    "method": "central",
+    "h": 0.002,
+    "minus": 19.998,
+    "plus": 20.002,
+    "bounds_note": "No physical bounds supplied; both perturbations are positive.",
+    "probes": [
+      {
+        "point": [
+          0.25,
+          0.25
+        ],
+        "tangent": 0.011865817876539193,
+        "finite_difference": 0.011865822007489646,
+        "relative_error": 3.481385824452395e-07
+      },
+      {
+        "point": [
+          0.5,
+          0.5
+        ],
+        "tangent": -0.008403603427461314,
+        "finite_difference": -0.008403604907541301,
+        "relative_error": 1.7612441370984163e-07
+      },
+      {
+        "point": [
+          0.75,
+          0.25
+        ],
+        "tangent": -0.011923766395392962,
+        "finite_difference": -0.011923769924631483,
+        "relative_error": 2.9598344680638875e-07
+      }
+    ],
+    "maximum_probe_relative_error": 3.481385824452395e-07,
+    "tangent_l2": 0.010871345238175883,
+    "finite_difference_l2": 0.010871350979933461,
+    "error_l2": 6.378033960105196e-09,
+    "global_relative_l2_error": 5.866827381323525e-07
+  },
+  "initial_condition": {
+    "expected_at_probes": [
+      0.02,
+      -0.013999999999999999,
+      -0.02
+    ],
+    "actual_at_probes": [
+      0.02,
+      -0.013999999999999999,
+      -0.02
+    ],
+    "maximum_error": 0.0
+  },
+  "boundary_condition_audit": "No exterior term or essential BC: zero normal flux is the natural weak-form condition.",
+  "field_ranges": {
+    "forward_all_saved": [
+      -0.16466832409210094,
+      0.2413898224674665
+    ],
+    "final_forward": [
+      -0.16466832409210094,
+      -0.0003872646791683293,
+      0.2413898224674665
+    ],
+    "sensitivity_all_saved": [
+      -0.01604611234958048,
+      0.02275742375983296
+    ],
+    "constraint_note": "No physical phi bounds were supplied."
+  },
+  "time_step_refinement": {
+    "coarse_dt": 0.0001,
+    "fine_dt": 5e-05,
+    "probes": [
+      {
+        "point": [
+          0.25,
+          0.25
+        ],
+        "phi_dt": 0.12067862137839044,
+        "phi_dt_over_2": 0.12058159912581957,
+        "phi_absolute_change": 9.702225257086916e-05,
+        "sensitivity_dt": 0.011865817876539193,
+        "sensitivity_dt_over_2": 0.01184629962184667,
+        "sensitivity_absolute_change": 1.95182546925219e-05
+      },
+      {
+        "point": [
+          0.5,
+          0.5
+        ],
+        "phi_dt": -0.08465122846748122,
+        "phi_dt_over_2": -0.08458365441250017,
+        "phi_absolute_change": 6.757405498104829e-05,
+        "sensitivity_dt": -0.008403603427461314,
+        "sensitivity_dt_over_2": -0.00838959870036353,
+        "sensitivity_absolute_change": 1.4004727097784511e-05
+      },
+      {
+        "point": [
+          0.75,
+          0.25
+        ],
+        "phi_dt": -0.12090404800592479,
+        "phi_dt_over_2": -0.12080593915856788,
+        "phi_absolute_change": 9.810884735690639e-05,
+        "sensitivity_dt": -0.011923766395392962,
+        "sensitivity_dt_over_2": -0.011903888469474136,
+        "sensitivity_absolute_change": 1.987792591882573e-05
+      }
+    ],
+    "global": {
+      "phi_l2_change": 9.283352079708873e-05,
+      "sensitivity_l2_change": 1.8145143712477933e-05
+    }
+  },
+  "nonlinear_convergence": {
+    "maximum_iterations": 1,
+    "maximum_final_residual": 6.479330585878637e-13
+  },
+  "acceptance": {
+    "maximum_probe_relative_error_limit": 0.0001,
+    "global_relative_l2_error_limit": 0.0001,
+    "newton_converged_every_step": true
+  },
+  "runtime_seconds": 233.87646222114563
+}
