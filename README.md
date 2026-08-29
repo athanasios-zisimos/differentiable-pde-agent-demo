@@ -1,4 +1,4 @@
-# Differentiable FEM Agent Demonstration
+# Differentiable PDE Agent Demonstration
 
 A reproducible worked example that converts a MOOSE Allen–Cahn PDE input into a separate, validated differentiable FEniCSx solver.
 
